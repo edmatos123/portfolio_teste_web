@@ -24,8 +24,7 @@ public class BasePage {
     }
 
     protected WebElement waitVisible(By by) {
-        return wait.until(
-                ExpectedConditions.visibilityOfElementLocated(by));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     protected WebElement waitClickable(By by) {    	
@@ -39,8 +38,7 @@ public class BasePage {
     	WebElement element = waitClickable(by);
     	
     	((JavascriptExecutor) driver)
-        .executeScript(
-                "arguments[0].scrollIntoView({block: 'center'});",
+        .executeScript("arguments[0].scrollIntoView({block: 'center'});",
                 element
         );
     	element.click();

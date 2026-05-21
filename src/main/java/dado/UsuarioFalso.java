@@ -16,11 +16,9 @@ public class UsuarioFalso {
                 .email(faker.internet().emailAddress())
                 .tipoGenero("Mr")
                 .senha(faker.internet().password())
-                .dia(String.valueOf(
-                        faker.number().numberBetween(1, 28)))
+                .dia(String.valueOf(faker.number().numberBetween(1, 28)))
                 .mes("October")
-                .ano(String.valueOf(
-                        faker.number().numberBetween(1970, 2000)))
+                .ano(String.valueOf(faker.number().numberBetween(1970, 2000)))
                 .primeiroNome(faker.name().firstName())
                 .ultimoNome(faker.name().lastName())
                 .empresa(faker.company().name())

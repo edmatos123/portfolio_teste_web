@@ -7,26 +7,24 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
     	         
-        if(driver == null) {
+        if(driver.get() == null) {
 
-            WebDriverManager.chromedriver().setup();
-
-            driver = new ChromeDriver();
-
-            driver.manage().window().maximize();
+            driver.set(new ChromeDriver());        	
+        	WebDriverManager.chromedriver().setup();          
+            driver.get().manage().window().maximize();
         }
 
-        return driver;
+        return driver.get();
     }
 
     public static void quitDriver() {
 
-        if(driver != null) {
-            driver.quit();
+        if(driver.get() != null) {
+            driver.get().quit();
             driver = null;
         }
     }

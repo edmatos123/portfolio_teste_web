@@ -23,8 +23,7 @@ public class MenuComponente extends BasePage {
                 break;
 
             default:
-                throw new IllegalArgumentException(
-                        "Menu inválido");
+                throw new IllegalArgumentException("Menu inválido");
         }
     }
 }

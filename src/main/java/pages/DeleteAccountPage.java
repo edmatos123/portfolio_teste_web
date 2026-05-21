@@ -11,8 +11,7 @@ public class DeleteAccountPage extends BasePage {
 
         if(!isElementVisible(lblContaExcluida)) {
 
-            throw new AssertionError(
-                    "Conta nao excluida");
+            throw new AssertionError("Conta nao excluida");
         }
     }
 

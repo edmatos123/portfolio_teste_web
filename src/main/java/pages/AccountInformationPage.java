@@ -78,8 +78,7 @@ public class AccountInformationPage extends BasePage {
                 return "2";
 
             default:
-                throw new IllegalArgumentException(
-                        "Genero invalido");
+                throw new IllegalArgumentException("Genero invalido");
         }
     }
 }

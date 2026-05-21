@@ -11,8 +11,7 @@ public class CreateAccountPage extends BasePage {
 
         if(!isElementVisible(lblContaCriada)) {
 
-            throw new AssertionError(
-                    "Conta nao criada");
+            throw new AssertionError("Conta nao criada");
         }
     }
 
