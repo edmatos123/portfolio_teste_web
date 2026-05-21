@@ -25,7 +25,7 @@ public class DriverFactory {
 
         if(driver.get() != null) {
             driver.get().quit();
-            driver = null;
+            driver.remove();
         }
     }
 }
