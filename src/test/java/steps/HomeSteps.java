@@ -3,7 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 
 import pages.HomePage;
-
+import configuracao.Configuracao;
 public class HomeSteps {
 
     HomePage homePage = new HomePage();
@@ -11,6 +11,6 @@ public class HomeSteps {
     @Given("que acesso o site")
     public void acessarSite() {
 
-        homePage.acessarSite("https://automationexercise.com/");
+        homePage.acessarSite(Configuracao.getString("url"));
     }
 }

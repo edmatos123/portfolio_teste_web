@@ -1,5 +1,6 @@
 package steps;
 
+import components.HeaderComponent;
 import dado.UsuarioFalso;
 
 import io.cucumber.java.en.Then;
@@ -12,11 +13,9 @@ import pages.CreateAccountPage;
 import pages.DeleteAccountPage;
 import pages.LoginSignupPage;
 
-import componentes.MenuComponente;
+public class RegisterUserSteps {
 
-public class RegistrarUsuarioSteps {
-
-    MenuComponente menu = new MenuComponente();
+    HeaderComponent menu = new HeaderComponent();
     LoginSignupPage telaLogin = new LoginSignupPage();
     AccountInformationPage telaCadastro =  new AccountInformationPage();
     CreateAccountPage telaCriacao = new CreateAccountPage();
@@ -26,7 +25,7 @@ public class RegistrarUsuarioSteps {
     @When("acesso a tela de cadastro")
     public void acessarTelaCadastro() {
 
-        menu.acessarMenu("Signup/Login");
+        menu.acessarSignupLogin();
     }
 
     @When("preencho os dados do novo usuário")
@@ -47,7 +46,7 @@ public class RegistrarUsuarioSteps {
     @Then("eu excluo a conta")
     public void excluirConta() {
 
-        menu.acessarMenu("Delete Account");
+        menu.acessarDeleteAccount();
         telaExclusao.validarContaExcluidaSucesso();
         telaExclusao.clicarContinuar();
     }

@@ -8,15 +8,25 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DriverFactory {
 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-
+    private static String browser = Configuracao.getString("browser");
+    
     public static WebDriver getDriver() {
     	         
         if(driver.get() == null) {
         	
-        	WebDriverManager.chromedriver().setup(); 
-            driver.set(new ChromeDriver());        	
-        	         
-            driver.get().manage().window().maximize();
+        	switch (browser) {
+        	
+        	case "chrome":        		
+            	WebDriverManager.chromedriver().setup(); 
+                driver.set(new ChromeDriver());     	
+                driver.get().manage().window().maximize();
+        	break;
+        	
+        	default:
+        	
+        	}
+        	
+        	
         }
 
         return driver.get();

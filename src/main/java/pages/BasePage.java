@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import configuracao.DriverFactory;
+import configuracao.Configuracao;
 
 public class BasePage {
 
@@ -20,7 +21,7 @@ public class BasePage {
     public BasePage() {
 
         this.driver = DriverFactory.getDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(Configuracao.getInt("timeout")));
     }
 
     protected WebElement waitVisible(By by) {
