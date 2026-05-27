@@ -1,5 +1,5 @@
 
-package components;
+package pages.components;
 
 import org.openqa.selenium.By;
 

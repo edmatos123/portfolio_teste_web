@@ -1,6 +1,5 @@
 package steps;
 
-import components.HeaderComponent;
 import dado.UsuarioFalso;
 
 import io.cucumber.java.en.Then;
@@ -12,6 +11,7 @@ import pages.AccountInformationPage;
 import pages.CreateAccountPage;
 import pages.DeleteAccountPage;
 import pages.LoginSignupPage;
+import pages.components.HeaderComponent;
 
 public class RegisterUserSteps {
 
