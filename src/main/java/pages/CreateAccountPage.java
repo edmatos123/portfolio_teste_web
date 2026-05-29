@@ -7,12 +7,11 @@ public class CreateAccountPage extends BasePage {
     private By lblContaCriada = By.cssSelector("[data-qa='account-created']");
     private By btnContinue = By.xpath("//a[text()='Continue']");
 
-    public void validarContaCriadaSucesso() {
+    public boolean contaCriada() {
 
-        if(!isElementVisible(lblContaCriada)) {
+       return isElementVisible(lblContaCriada); 
 
-            throw new AssertionError("Conta nao criada");
-        }
+     
     }
 
     public void clicarContinuar() {

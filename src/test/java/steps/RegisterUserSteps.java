@@ -1,7 +1,7 @@
 package steps;
 
 import dado.UsuarioFalso;
-
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -12,6 +12,7 @@ import pages.CreateAccountPage;
 import pages.DeleteAccountPage;
 import pages.LoginSignupPage;
 import pages.components.HeaderComponent;
+import validation.AccountValidation;
 
 public class RegisterUserSteps {
 
@@ -20,34 +21,47 @@ public class RegisterUserSteps {
     AccountInformationPage telaCadastro =  new AccountInformationPage();
     CreateAccountPage telaCriacao = new CreateAccountPage();
     DeleteAccountPage telaExclusao = new DeleteAccountPage();
+    AccountValidation validaConta = new AccountValidation();
     Usuario usr;
 
-    @When("acesso a tela de cadastro")
+    @When("acesso a tela de login e cadastro")
     public void acessarTelaCadastro() {
 
         menu.acessarSignupLogin();
     }
 
-    @When("preencho os dados do novo usuário")
+    @And("preencho os dados do novo usuário")
     public void preencherDadosUsuario() {
 
         usr = UsuarioFalso.criarUsuarioCompleto();
         telaLogin.preencherDadosIniciaisCadastro(usr);
-        telaCadastro.cadastrarUsuario(usr);
+        telaCadastro.preencherCadastrarUsuario(usr);
     }
 
-    @When("confirmo a criação da conta")
+    @And("confirmo a criação da conta")
     public void confirmarCriacaoConta() {
-
-        telaCriacao.validarContaCriadaSucesso();
+    	telaCadastro.confirmarCadastro();    
+    }
+    
+    @Then("a conta é criada com sucesso")
+    public void validarContaCriada() {
+    	validaConta.validarContaCriadaSucesso();
         telaCriacao.clicarContinuar();
     }
 
-    @Then("eu excluo a conta")
-    public void excluirConta() {
+    @When("acesso a tela de exclusão")
+    public void acessarTelaExclusao() {
 
         menu.acessarDeleteAccount();
-        telaExclusao.validarContaExcluidaSucesso();
+    }
+    
+    @Then("a conta é excluída com sucesso")
+    public void validarContaExcluida() {
+
+        validaConta.validarContaExcluidaSucesso();
         telaExclusao.clicarContinuar();
     }
+    
+    
+    
 }

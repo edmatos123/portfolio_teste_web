@@ -23,7 +23,7 @@ public class AccountInformationPage extends BasePage {
     private By txtCelular = By.id("mobile_number");
     private By btnCriar = By.cssSelector("[data-qa='create-account']");
 
-    public void cadastrarUsuario(Usuario usr) {
+    public void preencherCadastrarUsuario(Usuario usr) {
 
         selecionarGenero(usr.getTipoGenero());
 
@@ -55,7 +55,11 @@ public class AccountInformationPage extends BasePage {
 
         sendKeys(txtCelular, usr.getCelular());
 
-        click(btnCriar);
+        
+    }
+    
+    public void confirmarCadastro() {
+    	click(btnCriar);
     }
 
     private void selecionarGenero(String genero) {
