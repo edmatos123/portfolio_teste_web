@@ -4,12 +4,9 @@
 
 Feature: Automation Exercise
 
-Backgroud:
- Given que acesso o site
-
-@login
 Scenario: Cadastrar e excluir usuario
   
+  Given que acesso o site
   When acesso a tela de login e cadastro
   And preencho os dados do novo usuário
   And confirmo a criação da conta
@@ -19,7 +16,9 @@ Scenario: Cadastrar e excluir usuario
 
   Scenario: Login e logout
   
-  When realizo login
+  Given que acesso o site
+  When acesso a tela de login e cadastro
+  And realizo login
   Then o usuário é autenticado
   When realizo logout
   Then o usuário é desconectado

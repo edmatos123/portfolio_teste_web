@@ -12,16 +12,25 @@ public class AccountSteps {
 	 DeleteAccountPage telaExclusao = new DeleteAccountPage();
 	 AccountValidation validaConta = new AccountValidation();
 	
-		
-
-    
     @Then("a conta é excluída com sucesso")
     public void validarContaExcluida() {
 
         validaConta.validarContaExcluidaSucesso();
         telaExclusao.clicarContinuar();
     }
+    
+    @When("realizo logout")
+    public void realizo_logout() {
+    	menu.acessarLogou();
+    	
+    }
 	
+    @Then("o usuário é desconectado")
+    public void o_usuário_é_desconectado() {
+    	validaConta.validarLogoutSucesso(); 
+    	
+    }
+
 	
 	
 	
