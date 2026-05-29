@@ -7,6 +7,7 @@ Feature: Automation Exercise
 Backgroud:
  Given que acesso o site
 
+@login
 Scenario: Cadastrar e excluir usuario
   
   When acesso a tela de login e cadastro
@@ -16,7 +17,6 @@ Scenario: Cadastrar e excluir usuario
   And acesso a tela de exclusão
   Then a conta é excluída com sucesso
 
-@login
   Scenario: Login e logout
   
   When realizo login

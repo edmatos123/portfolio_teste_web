@@ -14,9 +14,8 @@ import pages.LoginSignupPage;
 import pages.components.HeaderComponent;
 import validation.AccountValidation;
 
-public class RegisterUserSteps {
+public class RegisterSteps {
 
-    HeaderComponent menu = new HeaderComponent();
     LoginSignupPage telaLogin = new LoginSignupPage();
     AccountInformationPage telaCadastro =  new AccountInformationPage();
     CreateAccountPage telaCriacao = new CreateAccountPage();
@@ -24,11 +23,6 @@ public class RegisterUserSteps {
     AccountValidation validaConta = new AccountValidation();
     Usuario usr;
 
-    @When("acesso a tela de login e cadastro")
-    public void acessarTelaCadastro() {
-
-        menu.acessarSignupLogin();
-    }
 
     @And("preencho os dados do novo usuário")
     public void preencherDadosUsuario() {
@@ -49,18 +43,7 @@ public class RegisterUserSteps {
         telaCriacao.clicarContinuar();
     }
 
-    @When("acesso a tela de exclusão")
-    public void acessarTelaExclusao() {
 
-        menu.acessarDeleteAccount();
-    }
-    
-    @Then("a conta é excluída com sucesso")
-    public void validarContaExcluida() {
-
-        validaConta.validarContaExcluidaSucesso();
-        telaExclusao.clicarContinuar();
-    }
     
     
     
