@@ -12,7 +12,7 @@ public class LoginSignupPage extends BasePage {
     private By txtEmailLogin = By.cssSelector("[data-qa='login-email']");
     private By txtSenhaLogin = By.cssSelector("[data-qa='login-password']");
     private By btnLogin = By.cssSelector("[data-qa='login-button']");
-
+    private By lblMsgEmailExiste= By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/p");
 
     public void preencherDadosIniciaisCadastro(Usuario usr) {
 
@@ -32,4 +32,15 @@ public class LoginSignupPage extends BasePage {
 
         click(btnLogin);
     }
+    
+    
+    public boolean msgEmailExistenteVisivel() {
+    	return isElementVisible(lblMsgEmailExiste);
+    }
+    
+    public String msgEmailExistente() {
+    	return getText(lblMsgEmailExiste);
+    }
+    
+    
 }

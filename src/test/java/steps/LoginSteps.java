@@ -2,7 +2,6 @@ package steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import pages.LoginSignupPage;
 import validation.AccountValidation;
 import configuracao.Configuracao;
@@ -17,9 +16,7 @@ public class LoginSteps {
 	@And("realizo login")
 	public void realizo_login() {	   
 		
-		email = Configuracao.getString("email_usuario");
-		senha = Configuracao.getString("senha_usuario");
-		telaLogin.fazerLogin(email, senha);		
+		telaLogin.fazerLogin(Configuracao.getString("email_usuario"), Configuracao.getString("senha_usuario"));		
 	}
 
 	@Then("o usuário é autenticado")

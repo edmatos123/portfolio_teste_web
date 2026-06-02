@@ -44,6 +44,8 @@ public class BasePage {
         );
     	element.click();
     }
+    
+ 
 
     protected void sendKeys(By by, String text) {
 

@@ -11,8 +11,8 @@ import pages.AccountInformationPage;
 import pages.CreateAccountPage;
 import pages.DeleteAccountPage;
 import pages.LoginSignupPage;
-import pages.components.HeaderComponent;
 import validation.AccountValidation;
+import configuracao.Configuracao;
 
 public class RegisterSteps {
 
@@ -31,7 +31,15 @@ public class RegisterSteps {
         telaLogin.preencherDadosIniciaisCadastro(usr);
         telaCadastro.preencherCadastrarUsuario(usr);
     }
-
+    
+    @When("preencho os dados do novo usuário com email existente")
+    public void preencho_os_dados_do_novo_usuário_com_email_existente() {
+    	usr = UsuarioFalso.criarUsuarioCompleto();
+    	usr.email(Configuracao.getString("email_usuario"));    	
+    	telaLogin.preencherDadosIniciaisCadastro(usr);
+    }
+    
+    
     @And("confirmo a criação da conta")
     public void confirmarCriacaoConta() {
     	telaCadastro.confirmarCadastro();    
@@ -44,7 +52,10 @@ public class RegisterSteps {
     }
 
 
-    
+    @Then("é informado que o email existe")
+    public void é_informado_que_o_email_existe() {
+    	validaConta.validarCadastroEmailExistente();
+    }
     
     
 }
