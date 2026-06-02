@@ -19,11 +19,7 @@ public class AccountSteps {
         telaExclusao.clicarContinuar();
     }
     
-    @When("realizo logout")
-    public void realizo_logout() {
-    	menu.acessarLogou();
-    	
-    }
+
 	
     @Then("o usuário é desconectado")
     public void o_usuário_é_desconectado() {

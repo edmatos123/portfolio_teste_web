@@ -20,7 +20,7 @@ public class HeaderComponent extends BasePage {
     	click(btnDelete);
     }
     
-    public void acessarLogou() {
+    public void acessarLogout() {
     	click(btnLogout);
     }
     

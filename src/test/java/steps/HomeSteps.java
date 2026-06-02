@@ -27,9 +27,12 @@ public class HomeSteps {
 
         menu.acessarDeleteAccount();
     }
-
     
-    
+    @When("realizo logout")
+    public void realizo_logout() {
+    	menu.acessarLogout();
+    	
+    }
     
     
 }

@@ -4,7 +4,7 @@
 
 Feature: Automation Exercise
 
-Scenario: Cadastrar e excluir usuario
+Scenario: CT01 - Cadastrar e excluir usuario
   
   Given que acesso o site
   When acesso a tela de login e cadastro
@@ -14,7 +14,7 @@ Scenario: Cadastrar e excluir usuario
   And acesso a tela de exclusão
   Then a conta é excluída com sucesso
 
-  Scenario: Login e logout
+  Scenario: CT02 -  Login e logout
   
   Given que acesso o site
   When acesso a tela de login e cadastro
@@ -23,4 +23,12 @@ Scenario: Cadastrar e excluir usuario
   When realizo logout
   Then o usuário é desconectado
   
+  Scenario: CT03 - Cadastro com email existente
+  
+  Given que acesso o site
+  When acesso a tela de login e cadastro
+  And preencho os dados iniciais do cadastro com email invalido
+  When confirmo o cadastro inicial
+  Then e informado que o email existe
+   
   
