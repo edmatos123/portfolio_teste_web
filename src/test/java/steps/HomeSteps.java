@@ -34,5 +34,10 @@ public class HomeSteps {
     	
     }
     
+    @When("acesso a tela de produtos")
+    public void acesso_a_tela_de_produtos() {
+    	menu.acessarProdutos(); 
+    }
+    
     
 }

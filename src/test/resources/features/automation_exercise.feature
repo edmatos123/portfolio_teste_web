@@ -26,5 +26,15 @@ Scenario: CT01 - Cadastrar e excluir usuario
   When acesso a tela de login e cadastro
   And preencho os dados do novo usuário com email existente
   Then é informado que o email existe
+  
+  @test
+  Scenario: CT04 - Pesquisar produto
+  
+  Given que acesso o site
+  When acesso a tela de produtos
+  And pesquiso pelo produto
+  Then o produto é apresentado
+  
+  
    
   
