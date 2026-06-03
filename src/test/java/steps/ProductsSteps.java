@@ -1,0 +1,22 @@
+package steps;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.ProductsPage;
+import validation.ProductsValidation;
+
+public class ProductsSteps {
+	
+	ProductsPage telaProdutos = new ProductsPage();
+	ProductsValidation validaProduto = new ProductsValidation();
+	@When("pesquiso pelo produto")
+	public void pesquiso_pelo_produto() {
+		telaProdutos.pesquisarProduto("Blue Top");
+	}
+	@Then("o produto é apresentado")
+	public void o_produto_é_apresentado() {
+		validaProduto.validarProdutoPesquisado("Blue Top");
+	}
+	
+
+}
