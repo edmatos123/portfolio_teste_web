@@ -6,7 +6,7 @@ import java.util.List;
 public class Carrinho {
 
 	
-	private static List<Produto> produtos = new ArrayList();
+	private static List<Produto> produtos = new ArrayList<>();
 	
 	public static void adicionar(Produto produto) {
 		produtos.add(produto);
@@ -22,6 +22,8 @@ public class Carrinho {
 		produtos.clear();
 		
 	}
+	
+	
 	
 	
 	

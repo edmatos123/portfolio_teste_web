@@ -17,7 +17,7 @@ public class ProductsPage extends BasePage {
 	String xpathProduto = "//p[text()='%s']";
 
 	
-	Produto produto = new Produto();
+	
 	
 	public void pesquisarProduto(String produto) {
 		sendKeys(txtSearch,produto);
@@ -37,7 +37,7 @@ public class ProductsPage extends BasePage {
 		List<WebElement> elmtsProdutos = findElements(cardProdutos);
 		
 		for (int i=0 ; i < qtdProduto ; i++) {
-			
+			Produto produto = new Produto();
 			WebElement card = elmtsProdutos.get(i);
 			
 			clickElement(card.findElement(By.cssSelector(".add-to-cart")));
