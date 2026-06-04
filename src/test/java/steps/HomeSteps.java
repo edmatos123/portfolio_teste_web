@@ -39,5 +39,9 @@ public class HomeSteps {
     	menu.acessarProdutos(); 
     }
     
+    @When("acesso a tela de carrinho")
+    public void acesso_a_tela_de_carrinho() {
+    	menu.acessarCart();
+    }
     
 }

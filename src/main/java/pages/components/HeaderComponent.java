@@ -11,6 +11,7 @@ public class HeaderComponent extends BasePage {
     private By btnDelete = By.xpath("//a[text()=' Delete Account']");
     private By btnLogout = By.xpath("//a[text()=' Logout']");
     private By btnProdutos = By.xpath("//a[text()=' Products']");
+    private By btnCart = By.xpath("//a[text()=' Cart']");
     
     public void acessarSignupLogin() {
     	click(btnSignupLogin);
@@ -26,6 +27,10 @@ public class HeaderComponent extends BasePage {
     
     public void acessarProdutos() {
     	click(btnProdutos);
+    }
+    
+    public void acessarCart() {
+    	click(btnCart);
     }
     
     public boolean menuLogoutVisivel() {

@@ -50,7 +50,7 @@ Scenario: CT01 - Cadastrar e excluir usuario
   Given que acesso o site
   When acesso a tela de produtos
   And adiciono 2 produtos ao carrinho
-  And acesso o carrinho
+  And acesso a tela de carrinho
   Then os produtos são apresentados no carrinho
   
    

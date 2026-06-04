@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -39,9 +40,7 @@ public class BasePage {
     	WebElement element = waitClickable(by);
     	
     	((JavascriptExecutor) driver)
-        .executeScript("arguments[0].scrollIntoView({block: 'center'});",
-                element
-        );
+        .executeScript("arguments[0].scrollIntoView({block: 'center'});",element);
     	element.click();
     }
     
@@ -82,4 +81,21 @@ public class BasePage {
 
         select.selectByVisibleText(text);
     }
+    
+    protected List<WebElement> findElements(By by){
+    	
+    	return driver.findElements(by);
+    }
+    
+    protected void clickElement(WebElement elm) {
+    	
+
+    	((JavascriptExecutor) driver)
+        .executeScript("arguments[0].scrollIntoView({block: 'center'});",elm);
+    	
+    	elm.click();
+    	
+    	
+    }
+    
 }

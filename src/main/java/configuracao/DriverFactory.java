@@ -16,8 +16,8 @@ public class DriverFactory {
         	
         	switch (browser) {
         	
-        	case "chrome":        		
-            	WebDriverManager.chromedriver().setup(); 
+        	case "chrome":       	
+        		WebDriverManager.chromedriver().setup(); 
                 driver.set(new ChromeDriver());     	
                 driver.get().manage().window().maximize();
         	break;
