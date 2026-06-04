@@ -46,8 +46,4 @@ public class Produto {
 		this.qtdProduto = qtdProduto;
 	}
 	
-	
-	
-	
-	
 }

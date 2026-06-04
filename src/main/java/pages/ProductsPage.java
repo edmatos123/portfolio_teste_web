@@ -4,16 +4,20 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import modelo.Carrinho;
+import modelo.Produto;
 
 public class ProductsPage extends BasePage {
 
 	
 	private By txtSearch = By.id("search_product");
 	private By btnSearch = By.id("submit_search");
-	private By btnContinue = By.xpath("//button[text()='Continue Shopping']");
-	private By btnAddCarrinho = By.xpath("//a[@data-product-id]");
+	private By btnContinue = By.xpath("//button[text()='Continue Shopping']");	
+	private By cardProdutos = By.cssSelector(".productinfo");
 	String xpathProduto = "//p[text()='%s']";
-	String cssProdutos = "[data-product-id='%s']";
+
+	
+	Produto produto = new Produto();
 	
 	public void pesquisarProduto(String produto) {
 		sendKeys(txtSearch,produto);
@@ -30,22 +34,24 @@ public class ProductsPage extends BasePage {
 	
 	public void adicionarProdutoCarrinho(int qtdProduto) {
 			
-		List<WebElement> elmtsProdutos = findElements(btnAddCarrinho);
+		List<WebElement> elmtsProdutos = findElements(cardProdutos);
 		
 		for (int i=0 ; i < qtdProduto ; i++) {
-			//elmtsProdutos.get(i*2).click();
-			clickElement(elmtsProdutos.get(i*2));
+			
+			WebElement card = elmtsProdutos.get(i);
+			
+			clickElement(card.findElement(By.cssSelector(".add-to-cart")));
+		
 			confirmarProdutoCarrinho();
+			
+			String desc = card.findElement(By.tagName("p")).getText();
+			String valor = card.findElement(By.tagName("h2")).getText();
+			
+			produto.descProduto(desc).valorProduto(valor).qtdProduto(1);		
+			Carrinho.adicionar(produto);
 		}
 		
-		
-		//for (int i=1 ; i < qtdProduto + 1 ; i++) {			
-		//	click(By.cssSelector(String.format(cssProdutos, i)));
-		//	confirmarProdutoCarrinho();
-		//}
-		
-		 
-		
+	
 		
 	}
 	
