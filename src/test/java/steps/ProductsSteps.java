@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.ProductsPage;
 import validation.ProductsValidation;
+import configuracao.Configuracao;
 
 public class ProductsSteps {
 	
@@ -11,11 +12,11 @@ public class ProductsSteps {
 	ProductsValidation validaProduto = new ProductsValidation();
 	@When("pesquiso pelo produto")
 	public void pesquiso_pelo_produto() {
-		telaProdutos.pesquisarProduto("Blue Top");
+		telaProdutos.pesquisarProduto(Configuracao.getString("produto_pesquisa"));
 	}
 	@Then("o produto é apresentado")
 	public void o_produto_é_apresentado() {
-		validaProduto.validarProdutoPesquisado("Blue Top");
+		validaProduto.validarProdutoPesquisado(Configuracao.getString("produto_pesquisa"));
 	}
 	
 

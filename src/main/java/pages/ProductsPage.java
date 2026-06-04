@@ -7,8 +7,7 @@ public class ProductsPage extends BasePage {
 	
 	private By txtSearch = By.id("search_product");
 	private By btnSearch = By.id("submit_search");
-	private By lblProduto ;
-	String produto = "//p[text()='%s']";
+	String xpathProduto = "//p[text()='%s']";
 	
 	public void pesquisarProduto(String produto) {
 		sendKeys(txtSearch,produto);
@@ -16,7 +15,7 @@ public class ProductsPage extends BasePage {
 	}
 	
 	public boolean produtoVisivel(String descProduto) {
-		  lblProduto = By.xpath(String.format(produto, descProduto));
+		By lblProduto = By.xpath(String.format(xpathProduto, descProduto));
 		 
 		 return isElementVisible(lblProduto);
 		 
