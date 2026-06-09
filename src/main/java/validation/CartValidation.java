@@ -29,7 +29,7 @@ public class CartValidation {
 		assertEquals(esperado.getDescproduto(),obtido.getDescproduto(),"Nome do produto divergente");	
 		assertEquals(esperado.getQtdProduto(),obtido.getQtdProduto(),"Quantidade do produto divergente");
 		assertEquals(esperado.getValorProduto(),obtido.getValorProduto(),"Valor do produto divergente");
-						
+		//Incluir a validação do valor total do produto				
 		}
 		
 		

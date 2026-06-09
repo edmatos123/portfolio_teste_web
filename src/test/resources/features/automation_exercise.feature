@@ -1,5 +1,6 @@
 Feature: Automation Exercise
 
+@CT01
 Scenario: CT01 - Cadastrar e excluir usuario
   
   Given que acesso o site
@@ -10,6 +11,7 @@ Scenario: CT01 - Cadastrar e excluir usuario
   And acesso a tela de exclusão
   Then a conta é excluída com sucesso
 
+@CT02
   Scenario: CT02 -  Login e logout
   
   Given que acesso o site
@@ -19,7 +21,7 @@ Scenario: CT01 - Cadastrar e excluir usuario
   When realizo logout
   Then o usuário é desconectado
   
-  
+@CT03
   Scenario: CT03 - Cadastro com email existente
   
   Given que acesso o site
@@ -27,7 +29,7 @@ Scenario: CT01 - Cadastrar e excluir usuario
   And preencho os dados do novo usuário com email existente
   Then é informado que o email existe
   
-
+@CT04
   Scenario: CT04 - Pesquisar produto
   
   Given que acesso o site
@@ -35,13 +37,7 @@ Scenario: CT01 - Cadastrar e excluir usuario
   And pesquiso pelo produto
   Then o produto é apresentado  
 
-  Scenario: CT04 - Pesquisar produto
-  
-  Given que acesso o site
-  When acesso a tela de produtos
-  And coloco 1 produto no carrinho
-  Then o produto é apresentado
-    
+@CT05    
   Scenario: CT05 - Adicionar produtos ao carrinho
 
   Given que acesso o site

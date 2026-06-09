@@ -6,7 +6,6 @@ public class Produto {
 	private String valorProduto;
 	private int qtdProduto;
 	
-	
 	public Produto descProduto(String descproduto) {
 		this.descproduto = descproduto;
 		return this;

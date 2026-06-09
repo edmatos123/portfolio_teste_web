@@ -13,7 +13,7 @@ public class ProductsPage extends BasePage {
 	private By txtSearch = By.id("search_product");
 	private By btnSearch = By.id("submit_search");
 	private By btnContinue = By.xpath("//button[text()='Continue Shopping']");	
-	private By cardProdutos = By.cssSelector(".productinfo");
+	private By cardProdutos = By.cssSelector(".productinfo"); //Selecione qualquer elemento que tenha
 	String xpathProduto = "//p[text()='%s']";
 
 	
