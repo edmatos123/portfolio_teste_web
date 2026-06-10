@@ -19,6 +19,7 @@
         <cucumber.version>7.15.0</cucumber.version>
         <webdrivermanager.version>5.9.2</webdrivermanager.version>
         <faker.version>1.0.2</faker.version>
+        <allure.version>2.29.1</allure.version>
     </properties>
 
     <dependencies>
@@ -88,14 +89,14 @@
 		<dependency>
     	<groupId>io.qameta.allure</groupId>
     	<artifactId>allure-junit5</artifactId>
-    	<version>2.29.1</version>
+    	<version>${allure.version}</version>
 		</dependency>
 
 		<!-- Allure Cucumber 7 -->
 		<dependency>
    		<groupId>io.qameta.allure</groupId>
     	<artifactId>allure-cucumber7-jvm</artifactId>
-    	<version>2.29.1</version>
+    	<version>${allure.version}</version>
 		</dependency>
 
     </dependencies>
