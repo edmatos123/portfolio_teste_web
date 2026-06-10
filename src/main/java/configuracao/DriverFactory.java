@@ -2,6 +2,7 @@ package configuracao;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -16,10 +17,25 @@ public class DriverFactory {
         	
         	switch (browser) {
         	
-        	case "chrome":       	
-        		WebDriverManager.chromedriver().setup(); 
-                driver.set(new ChromeDriver());     	
-                driver.get().manage().window().maximize();
+        	case "chrome":
+
+        	    WebDriverManager.chromedriver().setup();
+
+        	    ChromeOptions options = new ChromeOptions();
+
+        	    if (System.getenv("CI") != null) {
+        	        options.addArguments("--headless=new");
+        	        options.addArguments("--no-sandbox");
+        	        options.addArguments("--disable-dev-shm-usage");  
+        	        options.addArguments("--window-size=1360,768");
+        	    }
+
+        	    driver.set(new ChromeDriver(options));
+
+        	    if (System.getenv("CI") == null) {
+        	        driver.get().manage().window().maximize();
+        	    }
+
         	break;
         	
         	default:
